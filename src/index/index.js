@@ -7,9 +7,9 @@ const { Response } = require('../common/response');
 module.exports.IndexAPI =(app) => {
     const router = express.Router();
     router.get("/", (req,res)=>{const menu ={
-        products: `https://${req.headers.hots}/api/products`,
-        users: `http://${req.headers.hots}/api/users`,
-        sales :`http://${req,headers.hots}/api/sales`
+        products: `https://${req.headers.host}/api/products`,
+        users: `https://${req.headers.host}/api/users`,
+        sales :`https://${req.headers.host}/api/sales`,
         };
 
     Response.success(res,200,"API Inventario", menu)
@@ -17,7 +17,7 @@ module.exports.IndexAPI =(app) => {
 
     app.use("/", router)
 
-}
+};
 
 
 
@@ -28,7 +28,7 @@ module.exports.NotFoundAPI =(app) => {
     router.all("*", (req,res)=>{
         Response.error(res, new createError.NotFound());
 
-    })
+    });
 
     app.use("/", router)
 

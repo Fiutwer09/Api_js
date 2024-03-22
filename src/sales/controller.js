@@ -1,6 +1,6 @@
 const createError = require("http-errors");
 
-const debug = require("debug")(`app:module-users-controller`);
+const debug = require("debug")(`app:module-sales-controller`);
 
 const { SalesService } = require("./services");
 const { Response } = require("../common/response");
